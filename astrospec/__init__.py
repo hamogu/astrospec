@@ -4,6 +4,15 @@
 This is an Astropy affiliated package.
 """
 
+# Elevate objects to the package level
+from spectrum import Spectrum1D
+
+__all__ = ['Spectrum1D']
+
+
+
+
+
 # Affiliated packages may add whatever they like to this file, but
 # should keep this content at the top.
 # ----------------------------------------------------------------------------
