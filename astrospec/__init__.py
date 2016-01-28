@@ -5,7 +5,7 @@ This is an Astropy affiliated package.
 """
 
 # Elevate objects to the package level
-from spectrum import Spectrum1D
+from .spectrum import Spectrum1D
 
 __all__ = ['Spectrum1D']
 
