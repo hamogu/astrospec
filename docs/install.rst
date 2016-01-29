@@ -12,7 +12,7 @@ Astrospec has the following requirements:
 
 One easy way to get these dependencies is to install a python distribution like `anaconda <http://continuum.io/>`_.
 
-Installing psfsubtraction
+Installing astrospec
 =========================
 
 .. comment NOT on PIPY yet
@@ -22,7 +22,7 @@ Installing psfsubtraction
 
    To install ccdproc with `pip <http://www.pip-installer.org/en/latest/>`_, simply run::
 
-       pip install --no-deps psfsubtraction
+       pip install --no-deps astrospec
 
    .. note::
 
@@ -43,7 +43,7 @@ At this early stage of development not source packages are available.
 
 .. comment Not on PiPy yet
    The latest stable source package for ccdproc can be `downloaded here
-   <https://pypi.python.org/pypi/psfsubtraction>`_.
+   <https://pypi.python.org/pypi/astrospec>`_.
 
 Development repository
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -56,19 +56,18 @@ using this command::
 Building and Installing
 -----------------------
 
-To build psfsubtraction (from the root of the source tree)::
+To build astrospec (from the root of the source tree)::
 
     python setup.py build
 
-To install psfsubtraction (from the root of the source tree)::
+To install astrospec (from the root of the source tree)::
 
     python setup.py install
 
 Testing a source code build of ccdproc
 --------------------------------------
 
-The easiest way to test that your psfsubtraction built correctly (without
+The easiest way to test that your astrospec built correctly (without
 installing it) is to run this from the root of the source tree::
 
     python setup.py test
-
