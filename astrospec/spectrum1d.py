@@ -1,6 +1,7 @@
 # Licensed under a 3-clause BSD style license - see LICENSE.rst
+
 import numpy as np
-from scipy inport interpolate
+from scipy import interpolate
 
 from astropy.nddata import NDData, NDIOMixin, NDSlicingMixin
 from astropy.utils.metadata import MetaData
@@ -8,10 +9,18 @@ from astropy import units as u
 
 from warnings import warn
 
+from .wcs import WCSTable
+
 
 class Spectrum1D(NDSlicingMixin, NDIOMixin, NDData):
-    """A 1 dimensionan spectrum.
-    
+    """A 1-dimensional spectrum.
+
+    Attributes
+    ----------
+
+    Methoods
+    --------
+
     See `astropy.nddata.NDData` for a description of the parameters.
     """
 
@@ -26,7 +35,7 @@ class Spectrum1D(NDSlicingMixin, NDIOMixin, NDData):
         '''
         self.wcs.shift_rv(rv)
 
-    def interpol(self, new_dispersion,  **kwargs):
+    def interpol(self, new_dispersion, **kwargs):
         '''Interpolate a spectrum onto a new dispersion axis.
 
         Parameters
@@ -38,7 +47,7 @@ class Spectrum1D(NDSlicingMixin, NDIOMixin, NDData):
 
         Returns
         -------
-        spec : :class:`~astrospec.Spectrum1d`
+        spec : :class:`~astrospec.Spectrum1D`
             A new spectrum.
         '''
         new_disp = new_dispersion.to(self.wcs.unit, equivalencies=u.spectral())
@@ -46,15 +55,13 @@ class Spectrum1D(NDSlicingMixin, NDIOMixin, NDData):
         f_flux = interpolate.interp1d(self.wcs.data, self.data, **kwargs)
         newflux = f_flux(new_disp)
 
-        new_wcs=WCSTable(new_dispersion)
+        new_wcs = WCSTable(new_dispersion)
 
         if self.uncertainty is not None:
-            warnings.warn('The uncertainty column is interpolated.' +
-                         'Bins are no longer independent and might require scaling.' +
-                         'It is up to the user the decide if the uncertainties are still meaningful.')
+            warnings.warn('The uncertainty column is interpolated. Bins are no longer '
+            'independent and might require scaling. It is up to the user the decide if the '
+            'uncertainties are still meaningful.')
             f_uncert = interpolate.interp1d(self.wcs.data, self.uncertainty, **kwargs)
 
         return self.__class__(data=newflux, unit=self.unit, meta=self.meta,
-                              wcs=new_wcs, uncertainty=f_uncert, 
-                              uncertainty=self.uncertainty)
-
+                              wcs=new_wcs, uncertainty=f_uncert)
