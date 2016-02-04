@@ -14,7 +14,7 @@ Astrospec has the following requirements:
 One easy way to get these dependencies is to install a python distribution like `anaconda <http://continuum.io/>`_.
 
 Installing astrospec
-=========================
+====================
 
 .. comment NOT on PIPY yet
 
@@ -66,7 +66,7 @@ To install astrospec (from the root of the source tree)::
     python setup.py install
 
 Testing a source code build of astrospec
---------------------------------------
+----------------------------------------
 
 The easiest way to test that your astrospec built correctly (without
 installing it) is to run this from the root of the source tree::
