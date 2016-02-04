@@ -15,12 +15,6 @@ from .wcs import WCSTable
 class Spectrum1D(NDSlicingMixin, NDIOMixin, NDData):
     """A 1-dimensional spectrum.
 
-    Attributes
-    ----------
-
-    Methoods
-    --------
-
     See `astropy.nddata.NDData` for a description of the parameters.
     """
 
