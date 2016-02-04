@@ -5,7 +5,7 @@ This is an Astropy affiliated package.
 """
 
 # Elevate objects to the package level
-from .spectrum import Spectrum1D
+from .spectrum1d import Spectrum1D
 
 __all__ = ['Spectrum1D']
 
@@ -22,4 +22,3 @@ from ._astropy_init import *
 # For egg_info test builds to pass, put package imports here.
 if not _ASTROPY_SETUP_:
     pass
-    #from spectrum import Spectrum1D
