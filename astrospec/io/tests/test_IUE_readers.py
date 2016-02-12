@@ -3,16 +3,10 @@ import pytest
 
 import astropy.units as u
 
-#from ..IUE import read_IUE_mxlo
 from ..IUE import ApertureException
 from ...spectrum1d import Spectrum1D
+from . import data_path
 
-
-
-
-def data_path(filename):
-    data_dir = os.path.join(os.path.dirname(__file__), 'files')
-    return os.path.join(data_dir, filename)
 
 def test_mxlo():
     spec1 = Spectrum1D.read(data_path('lwp11854.mxlo'))
