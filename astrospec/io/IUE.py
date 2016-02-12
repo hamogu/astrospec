@@ -71,7 +71,11 @@ def read_IUE_mxlo(filename, aperture = ''):
         meta = hdus[0].header
         wave = tab.WAVELENGTH[0]+np.arange(tab.NPOINTS[0])*tab.DELTAW[0]
         if len(tab) >1:
-            if aperture in tab.APERTURE:
+            if six.PY2:
+                ap = aperture
+            else:
+                ap = bytes(aperture, encoding='latin-1')
+            if ap in tab.APERTURE:
                 index = np.where(tab.APERTURE == aperture)
                 flux = tab.FLUX[index].flatten()
                 sigma = tab.SIGMA[index].flatten()
