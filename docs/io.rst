@@ -19,7 +19,7 @@ format name   identify description
 ``IUE-mxlo``  yes      IUE data downloaded from https://archive.stsci.edu/iue/
 ============= ======== ================================================================
 
-Reading a file with a know format is simple:
+Reading a file with a know format is simple::
 
     # Get the path to a file that's included in astrospec as an example
     from astropec.io.tests import data_path
@@ -28,6 +28,6 @@ Reading a file with a know format is simple:
     from astrospec import Spectrum1D
     my_spec = Spectum1D.read(filename, format='IUE-mxlo')
 
-For convenience, some formats can be automatically identified from the file name or file format - those are marked with "yes" in the identify column of the table above. In this case, you can just pass in the filename (however, this is slower than specifying the format directly):
+For convenience, some formats can be automatically identified from the file name or file format - those are marked with "yes" in the identify column of the table above. In this case, you can just pass in the filename (however, this is slower than specifying the format directly)::
 
         my_spec = Spectum1D.read(filename)

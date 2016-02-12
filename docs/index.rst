@@ -15,8 +15,9 @@ The documentation for this package is here:
 .. toctree::
   :maxdepth: 2
 
-  install.rst
-  io.rst
+  install
+  spectruminit
+  io
   
 .. toctree::
   :maxdepth: 1

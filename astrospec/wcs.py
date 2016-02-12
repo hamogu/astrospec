@@ -5,6 +5,8 @@ from astropy.units.quantity import Quantity
 from astropy.constants import c as c_light
 import astropy.units as u
 
+__all__ = ['WCSTable']
+
 class WCSTable(Quantity):
 
     def between(x0, x1):
