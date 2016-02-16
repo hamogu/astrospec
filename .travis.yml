@@ -92,12 +92,9 @@ install:
     # well as at the start of the install section or in the before_install
     # section if they are needed before setting up conda) to install any
     # other dependencies.
-    - pip install coverage
 
 script:
    - python setup.py $SETUP_CMD
-   - coverage run --source=astrospec setup.py $SETUP_CMD
-
 
 after_success:
     # If coveralls.io is set up for this package, uncomment the line
