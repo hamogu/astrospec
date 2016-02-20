@@ -1,16 +1,16 @@
 [run]
-source = {packagename}
+source = astrospec
 omit =
-   {packagename}/_astropy_init*
-   {packagename}/conftest*
-   {packagename}/cython_version*
-   {packagename}/setup_package*
-   {packagename}/*/setup_package*
-   {packagename}/*/*/setup_package*
-   {packagename}/tests/*
-   {packagename}/*/tests/*
-   {packagename}/*/*/tests/*
-   {packagename}/version*
+   astrospec/_astropy_init*
+   astrospec/conftest*
+   astrospec/cython_version*
+   astrospec/setup_package*
+   astrospec/*/setup_package*
+   astrospec/*/*/setup_package*
+   astrospec/tests/*
+   astrospec/*/tests/*
+   astrospec/*/*/tests/*
+   astrospec/version*
 
 [report]
 exclude_lines =

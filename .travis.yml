@@ -43,7 +43,7 @@ matrix:
     include:
 
         # Do a coverage test in Python 3.
-        - python: 3.5
+        - python: 2.7
           env: SETUP_CMD='test --coverage'
 
         # Check for sphinx doc build warnings - we do this first because it
@@ -92,15 +92,12 @@ install:
     # well as at the start of the install section or in the before_install
     # section if they are needed before setting up conda) to install any
     # other dependencies.
-    - pip install coverage
 
 script:
    - python setup.py $SETUP_CMD
-   - coverage run --source=astrospec setup.py $SETUP_CMD
-
 
 after_success:
     # If coveralls.io is set up for this package, uncomment the line
     # below and replace "packagename" with the name of your package.
     # The coveragerc file may be customized as needed for your package.
-    - if [[ $SETUP_CMD == 'test --coverage' ]]; then coveralls --rcfile='packagename/tests/coveragerc'; fi
+    - if [[ $SETUP_CMD == 'test --coverage' ]]; then coveralls --rcfile='astrospec/tests/coveragerc'; fi
